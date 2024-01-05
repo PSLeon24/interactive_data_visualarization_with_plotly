@@ -1,4 +1,3 @@
-checkpoint.ipynb
+.ipynb_checkpoints
+*/.ipynb_checkpoints/*
 .DS_Store
-Chap2/.ipynb_checkpoints/2부-checkpoint.ipynb
-Chap2/.ipynb_checkpoints/covid19-checkpoint.ipynb
