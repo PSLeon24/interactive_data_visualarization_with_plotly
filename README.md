@@ -36,7 +36,33 @@ plotly로 시작하는 인터랙티브 데이터 시각화
 ### 2_1. Plotly란?
 - 캐나다의 데이터 시각화 전문 회사의 이름, 이 회사가 만든 가장 우명한 제품이 Plotly 시각화 패키지
 - Plotly 시각화 패키지는 파이썬, R, 자바스크립트, 매트랩 등 다양한 언어에서 사용 가능
+- plotly 패키지 설치: <code>pip install plotly</code>
+### 2_2. Plotly 구조
+- Plotly: 시각화 생성을 위한 다양한 속성 데이터를 트리 형태로 구조화한 JSON 객체 - 리스트([]) 안에 딕셔너리({key : value})로 구성
+- plotly.graph_objects 모듈
+  - Plotly에서 제공하는 모든 기능을 사용하는 정규 방법
+  - Plotly 객체를 만들기 위해서는 Figure() 함수를 사용하여 Plotly 객체를 초기화하여 생성
+  - 초기화된 객체에 data, layout 속성을 할당
+    - plotly.graph_objects.add_trace()
+    - plotly.graph_objects.update_layout()
+- plotly.express 모듈
+  - plotly.graph_objects에서 제공하는 많은 속성 중에 자주 사용되는 속성을 매개변수화하여 쉬운 인터페이스로 설계한 함수들로 구성한 모듈
+  - Plotly는 data 속성과 layout 속성이 루트 노드인 속성들의 트리 구조로 구현, plotly.express는 트리 형태로 구성하지 않기 때문에 사용하기 쉽다는 장점이 있음
+  - 단점
+    - mesh나 isourface와 같은 3차원 시각화는 아직 plotly.express에서 지원하지 않음
+    - 여러 개의 트레이스를 가지는 서브플롯이나 다중 축의 사용, 패싯(facet)과 같은 시각화는 plotly.express로 생성하는 데에는 한계가 있음
+- Plotly 라이브러리 모듈 로딩 및 객체 초기화
+<pre>
+import plotly.graph_objects as go
+import plotly.express as px
 
+fig = go.Figure()
+fig.show()
+</pre>
+- data 속성
+  - data 속성: 시각화를 통해 표현해야 할 데이터와 그 표현 방식을 설정하는 속성(데이터를 표현하는 *트레이스를 구성하는 세부 속성들을 뜻함)
+  - 트레이스: Plotly로 시각화할 수 있는 그래픽적 데이터 표현 방법(e.g., scatter, pie, bar, etc.)
+    - 트레이스를 추가하기 위해서는 add_trace()를 사용, 이를 사용하기 위해서는 반드시 type 속성으로 트레이스 종류를 설정
 ## 3. 트레이스
 
 ## 4. layout 속성
