@@ -55,6 +55,8 @@ plotly로 시작하는 인터랙티브 데이터 시각화
 <pre>
 import plotly.graph_objects as go
 import plotly.express as px
+import plotly.offline as pyo
+pyo.init_notebook_mode() # 맥북에서 무반응 해결
 
 fig = go.Figure()
 fig.show()
